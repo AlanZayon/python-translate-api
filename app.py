@@ -8,7 +8,7 @@ from utils.generate_pdf import replace_text_in_pdf
 
 app = Flask(__name__)
 CORS(app)
-CORS(app, origins=["http://localhost:5173"])
+CORS(app, origins=["http://localhost:5173","https://pdf-translate-vue.vercel.app"])
 
 UPLOAD_FOLDER = 'uploads/'
 TRANSLATED_FOLDER = 'translated/'
