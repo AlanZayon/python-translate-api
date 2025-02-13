@@ -1,11 +1,20 @@
+
+
 import fitz  # PyMuPDF
 
-def extract_text_with_positions(pdf_path):
-    doc = fitz.open(pdf_path)
+def extract_text_with_positions(file_path):
+    doc = fitz.open(file_path)
     extracted_data = []
 
-    for page_num, page in enumerate(doc):
-        for block in page.get_text("dict")["blocks"]:  # Obtém blocos de texto no formato de dicionário
+    # Processar o PDF página por página
+    for page_num in range(len(doc)):
+        page = doc.load_page(page_num)
+        
+        # Extração de texto simples da página
+        text = page.get_text("text")
+        
+        # Se você precisa das informações com posição, usa o formato "dict"
+    for block in page.get_text("dict")["blocks"]:  # Obtém blocos de texto no formato de dicionário
             if "lines" in block:
                 for line in block["lines"]:
                     for span in line["spans"]:
