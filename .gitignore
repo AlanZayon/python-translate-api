@@ -17,8 +17,6 @@ __pycache__/
 # Dependências instaladas localmente
 *.sqlite3
 instance/
-uploads/
-translated/
 
 # IDEs e editores (VS Code, PyCharm, etc.)
 .vscode/
